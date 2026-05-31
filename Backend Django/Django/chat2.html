@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Chat WebSocket</title>
+</head>
+<body>
+  <h2>Chat en temps réel pour un produit</h2>
+   <p>User : <span id="status2">Unknown</span></p>
+  
+  <p>Status : <span id="status">Déconnecté</span></p>
+  <div>
+    <label>Receiver ID: <input type="number" id="receiverId" value="2" /></label><br>
+    <label>Message: <input type="text" id="messageInput" /></label>
+    <button onclick="sendMessage()">Envoyer</button>
+  </div>
+
+  <ul id="chatLog"></ul>
+
+  <script>
+    const productId = 1; // 🔁 Remplace par l'ID réel du produit
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MDY1MDMxLCJpYXQiOjE3NDcwNTQyMzEsImp0aSI6ImE0OWEyNTcyMWE2NjRlMTliMzNlMTJkMzQ2MWJkYjk1IiwidXNlcl9pZCI6Mn0.FCv1pt0NtRo2_XT-cKcM8_O30oEu4l5Drtfz1WmgWsE";
+    const wsUrl = `ws://127.0.0.1:8000/ws/chat/?token=${token}`;
+
+    const statusEl = document.getElementById("status");
+    const chatLog = document.getElementById("chatLog");
+     const statusE2 = document.getElementById("status2");
+
+    const socket = new WebSocket(wsUrl);
+
+    socket.onopen = () => {
+      statusEl.textContent = "Connecté ✅";
+      console.log("WebSocket connecté");
+    };
+
+    socket.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.type === "connection") {
+        statusE2.textContent = data.fullname;
+        return;
+      }
+      const li = document.createElement("li");
+      li.textContent = `${data.sender} → ${data.receiver} : ${data.content} (${data.timestamp})`;
+      chatLog.appendChild(li);
+    };
+
+    socket.onclose = () => {
+      statusEl.textContent = "Déconnecté ❌";
+      console.warn("WebSocket fermé");
+    };
+
+    socket.onerror = (error) => {
+      statusEl.textContent = "Erreur ⚠️";
+      console.error("WebSocket error", error);
+    };
+
+    function sendMessage() {
+      const receiverId = document.getElementById("receiverId").value;
+      const message = document.getElementById("messageInput").value;
+
+      const data = {
+        receiver_id: receiverId,
+        content: message,
+        product_id : productId
+      };
+
+      socket.send(JSON.stringify(data));
+    }
+  </script>
+</body>
+</html>

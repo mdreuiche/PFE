@@ -9,6 +9,9 @@
 ![JWT](https://img.shields.io/badge/Auth-JWT-7C6AF7?style=flat-square)
 ![WebSocket](https://img.shields.io/badge/Realtime-WebSocket-43C59E?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3.x-FFD43B?style=flat-square&logo=python)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 *Projet de Fin d'Études — 2025*
 

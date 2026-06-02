@@ -5,6 +5,7 @@
 **Plateforme de mise en relation entre bénéficiaires et prestataires de services**
 
 ![Django](https://img.shields.io/badge/Django-REST-092E20?style=flat-square&logo=django)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-3.5+-54C5F8?style=flat-square&logo=flutter)
 ![JWT](https://img.shields.io/badge/Auth-JWT-7C6AF7?style=flat-square)
 ![WebSocket](https://img.shields.io/badge/Realtime-WebSocket-43C59E?style=flat-square)

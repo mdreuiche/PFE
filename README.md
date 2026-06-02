@@ -251,8 +251,8 @@ easelink/
 
 ## 👥 Équipe
 
-|[Back End Developer]()|[Front End Developer]()| [Front End Developer]()||
-|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+|[Back End Developer]()|[Front End Developer]()| [Front End Developer]()|
+|:-------------------------:|:-------------------------:|:-------------------------:|
 |<img src="https://avatars.githubusercontent.com/u/162179601?v=4" width="100px" height="100px"> |  <img src="https://avatars.githubusercontent.com/u/171875353?v=4" width="100px" height="100px"> | <img src="https://avatars.githubusercontent.com/u/168287057?v=4" width="100px" height="100px"> | 
 |[Dreuiche Mohamed](https://github.com/mdreuiche)| [Ait El Hadj Mohamed](https://github.com/medo495) | [Ayoubi Yassine](https://github.com/IIDOUY)|
 
